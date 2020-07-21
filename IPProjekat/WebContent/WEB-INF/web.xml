@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>IPProjekat</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+ <servlet>
+ 	<description></description>
+ 	<display-name>LoginController</display-name>
+ 	<servlet-name>LoginController</servlet-name>
+ 	<servlet-class>net.etfbl.project.controller.LoginController</servlet-class>
+ </servlet>
+ <servlet>
+ 	<display-name>RegistrationController</display-name>
+ 	<servlet-name>RegistrationController</servlet-name>
+ 	<servlet-class>net.etfbl.project.controller.RegistrationController</servlet-class>
+ </servlet>
+ 	
+ <servlet>
+ 	<display-name>ProfileController</display-name>
+ 	<servlet-name>ProfileController</servlet-name>
+ 	<servlet-class>net.etfbl.project.controller.ProfileController</servlet-class>
+ </servlet>
+ <servlet>
+ 	<display-name>HomeController</display-name>
+ 	<servlet-name>HomeController</servlet-name>
+ 	<servlet-class>net.etfbl.project.controller.HomeController</servlet-class>
+ </servlet>
+   <servlet-mapping>
+ 	<servlet-name>HomeController</servlet-name>
+ 	<url-pattern>/home</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+ 	<servlet-name>ProfileController</servlet-name>
+ 	<url-pattern>/profile</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+ 	<servlet-name>RegistrationController</servlet-name>
+ 	<url-pattern>/register</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+ 	<servlet-name>LoginController</servlet-name>
+ 	<url-pattern>/login</url-pattern>
+ </servlet-mapping>
+</web-app>
