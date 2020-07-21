@@ -1,0 +1,94 @@
+<html lang="en" 
+	xmlns = "http://www.w3.org/1999/xhtml" 
+ 	xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+   <h:head>
+   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css"/>
+    	<h:outputScript library="js" name="jquery-3.5.1.js"/>
+    	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+    	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    	<h:outputScript library = "js" name="home.js"/>  
+        <h:outputStylesheet library = "css" name="home.css"/>
+	
+
+		 </h:head>
+   		
+   		<h:outputText value="&lt;br/&gt;" escape="false"/>
+   		  <h:outputText value="&lt;br/&gt;" escape="false"/>
+   		  <h:outputText value="&lt;br/&gt;" escape="false"/>
+   		<h:form id ="user">
+   		<h:panelGroup layout="block" id="div">
+		<h:dataTable id="myTable" value="#{userBean.users}" var="user" scrollable="true" resizableColumns="true" >
+			<h:column>
+				<f:facet clas="naslov" name="header">Username</f:facet>
+                   <h:outputText value="#{user.username}"/>   
+            </h:column>
+            <p:column>
+				<f:facet name="header">Password</f:facet>
+                  <h:outputText value="#{user.password}"/>  
+            </p:column> 
+            <h:column>
+				<f:facet  name="header">First Name</f:facet>
+                  <h:outputText value="#{user.firstName}"/>  
+            </h:column>
+            <h:column>
+				<f:facet name="header">Last Name</f:facet>
+                  <h:outputText value="#{user.lastName}"/>  
+            </h:column>
+            <h:column>
+				<f:facet name="header">Email</f:facet>
+                  <h:outputText value="#{user.email}"/>  
+            </h:column>
+            <h:column>
+				<f:facet name="header">Alpha2Code</f:facet>
+                  <h:outputText value="#{user.alpha2Code}"/>  
+            </h:column>
+            <h:column>
+				<f:facet name="header">Region</f:facet>
+                  <h:outputText value="#{user.region}"/>  
+            </h:column>
+            <h:column>
+				<f:facet name="header">City</f:facet>
+                  <h:outputText value="#{user.city}"/>  
+            </h:column>
+            <h:column>
+				<f:facet name="header">Picture</f:facet>
+                  <h:outputText value="#{user.picture}"/>  
+            </h:column>
+            <h:column>
+				<f:facet name="header">Blocked</f:facet>
+                  <h:outputText value="#{user.blocked}"/>  
+            </h:column>
+            <h:column>
+				<f:facet name="header">Registered</f:facet>
+                  <h:outputText value="#{user.registered}"/>  
+            </h:column>
+            <h:column>
+				<f:facet name="header">Options</f:facet>
+                  
+                  <h:commandLink action="#{userBean.blockUser(user)}">
+    				<h:graphicImage  value="resources/img/blockUnblock.png" />
+				  </h:commandLink> 
+				  <h:commandLink action="#{userBean.changeUserPassword(user)}">
+    				<h:graphicImage  value="resources/img/changePassword.png" />
+				  </h:commandLink> 
+				  <h:commandLink action="#{userBean.registerUser(user)}">
+    				<h:graphicImage  value="resources/img/registerUser.png" />
+				  </h:commandLink> 
+            </h:column>
+		</h:dataTable>
+		${userBean.message}
+		
+		</h:panelGroup>
+		</h:form>
+		
+<style>
+	.dataTables_scrollHeadInner{
+	width:80%;
+	}
+</style>
+   
+</html>

@@ -1,0 +1,41 @@
+
+
+<html lang="en" 
+	xmlns = "http://www.w3.org/1999/xhtml" 
+ 	xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+   <h:head>
+   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css"/>
+    	<h:outputScript library="js" name="jquery-3.5.1.js"/>
+    	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+    	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    	<h:outputScript library = "js" name="home.js"/>  
+        <h:outputStylesheet library = "css" name="home.css"/>
+	
+
+		 
+      	<title>Home</title>
+   </h:head>
+
+   <h:body>
+   		 <h:outputText value="&lt;br/&gt;" escape="false"/>
+   		  <h:outputText value="&lt;br/&gt;" escape="false"/>
+   		  <h:outputText value="&lt;br/&gt;" escape="false"/>
+   		  <h:outputLabel value="&#160;&#160;" >Number online users: #{userBean.getAllOnlineUsers()}</h:outputLabel>
+   		<h:outputText value="&lt;br/&gt;" escape="false"/>
+   		<h:outputLabel value="&#160;&#160;">Number register users: #{userBean.numberOfRegistredUsers()}</h:outputLabel>
+   		<h:outputText value="&lt;br/&gt;" escape="false"/>
+   		  <h:outputText value="&lt;br/&gt;" escape="false"/>
+   		  <h:panelGroup  layout="block" id="chart" style="width:80%;">
+   		<canvas id="myChart"></canvas>
+   		</h:panelGroup>
+   
+   <h:inputHidden id="hiddenButton" value="#{logBean.logsIn24Hours()}"/>
+   <!--<h:inputText id="myInput" onkeyup="myFunction()" pt:placeholder="Username"> <h:graphicImage  value="resources/img/changePassword.png" /></h:inputText> -->
+    <h:outputText value="&lt;br/&gt;" escape="false"/>
+   </h:body>
+   
+</html>

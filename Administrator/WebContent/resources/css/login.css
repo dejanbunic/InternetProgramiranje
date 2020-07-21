@@ -1,0 +1,36 @@
+@charset "UTF-8";
+body,html {height:100%;width:100%;margin:0;}
+body{
+	display:flex;
+}
+form {border: 3px solid #f1f1f1; margin:auto; width:40%}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+input[type=submit]{
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+button:hover {
+  opacity: 0.8;
+}
+div{
+	padding: 16px;
+}
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+
+}

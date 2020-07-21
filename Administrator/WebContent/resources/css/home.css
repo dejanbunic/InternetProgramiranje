@@ -1,0 +1,46 @@
+table {
+  border-collapse: collapse;
+}
+
+table, td, th {
+  border: 1px solid #BBB;
+  width:100%;
+}
+
+th{
+	background-color:#1E90FF;
+}
+tr:nth-child(even) {
+    background-color: #DCDCDC;
+}
+img{
+	width:20px;
+	heigh:20px;
+	background-color: white;
+}
+div{
+	overflow-x:auto;
+}
+#myInput{
+	width:40%;
+	padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;;
+}
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .odd{
+   background-color: #DCDCDC;
+  }
+  
+  
+  #chart{
+  width:80%;
+  }
+  
+ 
