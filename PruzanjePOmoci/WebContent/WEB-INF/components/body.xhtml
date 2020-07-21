@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	>
+
+<h:body>
+  
+<h:form id="form">
+<h:panelGrid id="container">
+
+  <p:outputLabel  value="Naziv" for="name"/>
+  <p:inputText id="name" value="#{callBean.call.name}"  required="true"  requiredMessage="Unesite naziv" />
+  <p:message for="name"/>
+  <h:outputText value="&lt;br/&gt;" escape="false"/>
+  
+  <p:outputLabel  value="Lokacija" for="location" />
+  <p:inputText id="location" value="#{callBean.call.location}"  required="true" requiredMessage="Unesite lokaciju"/>
+  <p:message for="location"/>
+  <h:outputText value="&lt;br/&gt;" escape="false"/>
+  
+  <p:outputLabel  value="Datum i vrijeme" for="datetime" />
+  <p:calendar id="datetime" pattern="dd/MM/yyyy HH:mm:ss" placeholder="dd/MM/yyyy HH:mm:ss"
+                    required="true" requiredMessage="Unesite datum i vrijeme"
+                    value="#{callBean.date}" inputStyle="width: 100% !important;"/>
+  <p:message for="datetime"/>
+  <h:outputText value="&lt;br/&gt;" escape="false"/>
+  
+  <p:outputLabel  value="Opis" for="description"/>
+  <p:inputTextarea id="description" value="#{callBean.call.description}" required="true"  requiredMessage="Unesite opis"/>
+  <p:message for="description"/>
+  <h:outputText value="&lt;br/&gt;" escape="false"/>
+  
+  <p:outputLabel  value="Slika" for="picture" />
+  <p:inputText id="picture" value="#{callBean.call.picture}" required="true"  requiredMessage="Unesite sliku">
+  	<f:validator validatorId="net.etfbl.pruzanjePomoci.validators.PictureValidator" />
+  </p:inputText>
+  <h:outputText value="&lt;br/&gt;" escape="false"/>
+  
+  <p:outputLabel  value="Kategorija" for="menu" />
+  <p:selectOneMenu id="menu" value="#{callBean.call.idCallCategory}" >
+  	<f:selectItems value="#{callBean.categories}" var="category" itemValue="#{category.id}" itemLabel="#{category.name}" />
+  </p:selectOneMenu>
+  <h:outputText value="&lt;br/&gt;" escape="false"/>
+  
+ <p:commandButton id="button" value="potvrdi" action="#{callBean.addCall}"  update="form"/>
+  </h:panelGrid>
+   
+  </h:form> 
+  </h:body>
+     <style>
+  
+  body,html {height:100%;width:100%;}
+  input[type=text], input[type=password], textarea,select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+#time,#menu{
+width:100%;
+}
+table{
+	width:50%;
+	margin:auto;
+}
+#form{
+	width:100%;
+}
+button {
+  background-color: #333;
+  color: #333;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+  </style> 
+</html>
